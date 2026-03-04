@@ -1,10 +1,13 @@
 pipeline {
-     agent any
-    // {
-    //     // Environnrement Node, npm, navigateur chromium, git
+     agent 
+    {
+        // Environnrement Node, npm, navigateur chromium, git
+        docker {
+            image  'cypress/base:24.14.0'
+            args '--user=root --entrypoint=""'
+        }
 
-
-    // }
+    }
 
     // paramètre pour ajouter les tags et rapport
     // tags
@@ -28,8 +31,8 @@ pipeline {
                     else {sh "npx cypress run --browser ${params.browser}"}
                 
                  }
-                 else { sh "echo 'aucun test est lancer' "}
-                 
+                 else { sh "echo 'aucun test est lancé' "}
+
                }
             }
         }
