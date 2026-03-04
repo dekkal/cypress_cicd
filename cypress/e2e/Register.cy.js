@@ -1,6 +1,7 @@
 ///<reference types="cypress"/>
 
 
+
 describe("Register", () => {
     it("Creation du compte",{tags:['@smoke','@e2e']} , () => {
         // aller sur le lien     
