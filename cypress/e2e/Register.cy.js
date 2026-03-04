@@ -2,7 +2,7 @@
 
 
 describe("Register", () => {
-    it("Creation du compte", () => {
+    it("Creation du compte",{tags:['@smoke','@e2e']} , () => {
         // aller sur le lien     
         cy.visit("https://agropeyi.fr/");
         //clicker sur le lien inscription
