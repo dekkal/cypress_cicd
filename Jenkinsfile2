@@ -48,18 +48,18 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            sh 'chmod -R 777 cypress/reports' // user à toutes les permissions
-            publishHTML([
-                allowMissing: false,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'cypress/reports',
-                reportFiles: 'mochawesome.html',
-                reportName: 'Cypress Report'
-            ])
-        }
-    }
+    // post {
+    //     always {
+    //         sh 'chmod -R 777 cypress/reports' // user à toutes les permissions
+    //         publishHTML([
+    //             allowMissing: false,
+    //             alwaysLinkToLastBuild: true,
+    //             keepAll: true,
+    //             reportDir: 'cypress/reports',
+    //             reportFiles: 'mochawesome.html',
+    //             reportName: 'Cypress Report'
+    //         ])
+    //     }
+    // }
 
 }
