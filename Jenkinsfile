@@ -30,7 +30,7 @@ pipeline {
         stage('vérifier les pré-requis'){
             steps{
                script{
-                if(params.browser=="chromium"){
+                if(params.browser=="edge"){
                     if (params.run_with_tag==true)
                     {
                         sh "npx cypress run --browser ${params.browser} grepTags='${params.tag}'"
